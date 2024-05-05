@@ -398,7 +398,7 @@ ft.app(target=main)
 ### 結果
 
 <!-- 動画 -->
-```<div><video controls src="contents/calculator.mp4" muted="false"></video></div>```
+<div><video controls src="https://github.com/massao000/Flat-sample/assets/69783019/45f94e62-945e-4b38-ac3a-9fa800b83413" muted="false"></video></div>
 
 https://flet-controls-gallery.fly.dev/layout
 

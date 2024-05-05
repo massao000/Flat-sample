@@ -68,7 +68,7 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-![](sozai\0001.png)
+![](../calculator/sozai/0001.png)
 
 ### レイアウトの調整
 
@@ -97,7 +97,7 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-![](sozai\0002.png)
+![](../calculator/sozai/0002.png)
 
 ### レイアウトのカスタム
 
@@ -105,7 +105,7 @@ ft.app(target=main)
 
 行数を調整する`expand`を加えます。
 
-![](sozai\0003.png)
+![](../calculator/sozai/0003.png)
 
 `expand`を`2`にすることで0ボタンを二行使うことができます。
 
@@ -151,7 +151,7 @@ ft.app(target=main)
 ft.ElevatedButton('ec', data='ce', expand=1, on_click=button_click)
 ```
 
-![](sozai\0004.png)
+![](../calculator/sozai/0004.png)
 
 #### イベント処理
 
@@ -401,6 +401,8 @@ ft.app(target=main)
 
 <!-- 動画 -->
 <div><video controls src="https://github.com/massao000/Flat-sample/assets/69783019/45f94e62-945e-4b38-ac3a-9fa800b83413" muted="false"></video></div>
+
+<!-- <div><video controls src="../calculator/sozai/calculator.mp4" muted="false"></video></div> -->
 
 https://flet-controls-gallery.fly.dev/layout
 

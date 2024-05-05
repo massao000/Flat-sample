@@ -105,9 +105,8 @@ ft.app(target=main)
 
 行数を調整する`expand`を加えます。
 
-![](../calculator/sozai/0003.png)
-
 `expand`を`2`にすることで0ボタンを二行使うことができます。
+![](../calculator/sozai/0003.png)
 
 - [`ft.Container`](https://flet.dev/docs/controls/container/)を使用すると、背景色と境界線の装飾や、ほかのコンポーネントをグループ化し、レイアウトを制御できます
 - [`ft.Column`](https://flet.dev/docs/controls/column)は垂直配列で表示することができる

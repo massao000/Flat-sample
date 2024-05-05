@@ -68,7 +68,7 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-<!-- 画像 -->
+![](sozai\0001.png)
 
 ### レイアウトの調整
 
@@ -97,13 +97,15 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-<!-- 画像 -->
+![](sozai\0002.png)
 
 ### レイアウトのカスタム
 
 `ft.ElevatedButton`に押されたときにボタンを区別するために`data`を設定。
 
 行数を調整する`expand`を加えます。
+
+![](sozai\0003.png)
 
 `expand`を`2`にすることで0ボタンを二行使うことができます。
 
@@ -148,6 +150,8 @@ ft.app(target=main)
 ```py
 ft.ElevatedButton('ec', data='ce', expand=1, on_click=button_click)
 ```
+
+![](sozai\0004.png)
 
 #### イベント処理
 
@@ -403,3 +407,4 @@ ft.app(target=main)
 https://flet-controls-gallery.fly.dev/layout
 
 https://flet.dev/docs/
+

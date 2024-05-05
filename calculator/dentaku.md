@@ -397,8 +397,6 @@ def main(page: ft.Page):
 ft.app(target=main)
 ```
 
-<!-- 画像 -->
-
 ### 結果
 
 <!-- 動画 -->
@@ -407,7 +405,3 @@ ft.app(target=main)
 https://flet-controls-gallery.fly.dev/layout
 
 https://flet.dev/docs/
-<<<<<<< HEAD
-
-=======
->>>>>>> b19b21ff70ff779be1d8b2d071266f160f3e0b19

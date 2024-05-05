@@ -398,6 +398,7 @@ ft.app(target=main)
 ### 結果
 
 <!-- 動画 -->
+```<div><video controls src="contents/calculator.mp4" muted="false"></video></div>```
 
 https://flet-controls-gallery.fly.dev/layout
 

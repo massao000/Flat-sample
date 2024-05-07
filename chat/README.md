@@ -220,6 +220,7 @@ def join_click(e):
         page.update()
 ```
 また、ユーザ名が入力されていなければエラーが出るようになっています。
+
 ![](../chat/sozai/0005.png)
 
 

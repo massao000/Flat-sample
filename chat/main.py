@@ -81,19 +81,19 @@ def main(page: ft.Page):
     
     def join_click(e):
         if not join_user_name .value:
-            join_user_name .error_text = "Name cannot be blank!"
-            join_user_name .update()
+            join_user_name.error_text = "Name cannot be blank!"
+            join_user_name.update()
         else:
-            page.session.set("user_name", join_user_name .value)
+            page.session.set("user_name", join_user_name.value)
             page.dialog.open = False
-            page.pubsub.send_all(Message(user_name=join_user_name .value, text=f"{join_user_name .value} has joined the chat.", message_type="login_message"))
+            page.pubsub.send_all(Message(user_name=join_user_name.value, text=f"{join_user_name.value} has joined the chat.", message_type="login_message"))
             page.update()
         
     page.dialog = ft.AlertDialog(
         open = True,
         modal = True,
         title = ft.Text("Welcome!"),
-        content = ft.Column([join_user_name ], tight=True),
+        content = ft.Column([join_user_name], tight=True),
         actions = [ft.ElevatedButton(text="Join chat", on_click=join_click)],
         actions_alignment = "end"
     )

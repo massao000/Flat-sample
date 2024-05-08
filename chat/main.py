@@ -80,7 +80,7 @@ def main(page: ft.Page):
     join_user_name  = ft.TextField(label="Enter your name")
     
     def join_click(e):
-        if not join_user_name .value:
+        if not join_user_name.value:
             join_user_name.error_text = "Name cannot be blank!"
             join_user_name.update()
         else:

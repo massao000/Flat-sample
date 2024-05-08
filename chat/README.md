@@ -77,7 +77,7 @@ ft.app(main, view=ft.AppView.WEB_BROWSER)
 入力されたメッセージが`chat`に追加されます。
 そしてメッセージ入力欄は空になります。
 
-`view=ft.AppView.WEB_BROWSER`はGUIではなくWebページ開く
+`view=ft.AppView.WEB_BROWSER`：Webから使えるようになります。
 
 実行画面
 

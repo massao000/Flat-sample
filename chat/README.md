@@ -188,6 +188,7 @@ page.dialog = ft.AlertDialog(
 
 
 チャットに参加するとすべてのユーザにチャットに参加したことが通知されるメッセージが送信されます。
+
 ![](../chat/sozai/0004.png)
 
 
@@ -512,7 +513,3 @@ def on_message(message: Message):
 
 - IconButton
     - `tooltip`：カーソルが置かれたときに表示されるテキスト
-
----
-<!-- 動画　end_.mp4 -->
-<div><video controls src="https://github.com/massao000/Flat-sample/assets/69783019/00f015e6-2809-46bb-b499-7c5dccd299fa" muted="false"></video></div>

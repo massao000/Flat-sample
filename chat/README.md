@@ -432,7 +432,7 @@ def on_message(message: Message):
 
 新しいレイアウトにするためにいくつかの改善点があります。
 
-- メッセージを表示する[`Column`](https://flet.dev/docs/controls/Column)から[`ListView`](https://flet.dev/docs/controls/listview/)に変更
+- メッセージを表示する[`Column`](https://flet.dev/docs/controls/Column)から[`ListView`](https://flet.dev/docs/controls/listview/)に変更します。`ListView`にすることでスクロールできるようになります。
 - [`ListView`](https://flet.dev/docs/controls/listview/)の周りにボーダーを表示する[`Container`](https://flet.dev/docs/controls/container/)の追加
 - [`ElevatedButton`](https://flet.dev/docs/controls/elevatedbutton/)から[`IconButton`](https://flet.dev/docs/controls/iconbutton/)に変更
 - スペースを埋めるために`Container`に[`expand`](https://flet.dev/docs/controls/#expand)を追加
@@ -449,6 +449,9 @@ def on_message(message: Message):
 +     auto_scroll = True
 + )
 ``` 
+- ListView
+    - `spacing`：アイテム間の高さを指定できます。
+    - `auto_scroll`：`True`にした場合、スクロールバーの位置を自動的に端に移動させます。
 
 新しい入力フォーム
 ```diff py
@@ -465,6 +468,12 @@ def on_message(message: Message):
 +     on_submit = send_message_click
 + )
 ```
+
+- TextField
+    - `shift_enter`：`shift+enter`で改行することができます。
+    - `filled`：塗りつぶしをします。
+    - `on_submit`：`TextField`にフォーカスがあっているときにENTERキーを押すとイベントが発生します。
+
 
 新しいページ
 ```diff py
@@ -492,6 +501,8 @@ def on_message(message: Message):
 + )
 ```
 
-<!-- 動画　end_.mp4 -->
+- IconButton
+    - `tooltip`：カーソルが置かれたときに表示されるテキスト
 
-### 
+---
+<!-- 動画　end_.mp4 -->

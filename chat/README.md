@@ -43,7 +43,8 @@ pip install flet
 - [`Column`](https://flet.dev/docs/controls/column/) メッセージ（テキスト）を垂直に表示をする
 - [`Row`](https://flet.dev/docs/controls/row/) TextFieldとElevatedButtonを水平に表示する
 
-全体のコード
+
+全体のコード：[01.py](https://github.com/massao000/Flat-sample/blob/main/chat/01.py)
 ```py:01.py
 import flet as ft
 
@@ -110,7 +111,7 @@ def on_message(message: Message):
     - ユーザが送信ボタンを押したときに呼ばれます。
     - 送信されたメッセージを`Message`オブジェクトに変換し、`page.pubsub.send_all()`を使いすべてのユーザに配信します
 
-全体のコード
+全体のコード：[02.py](https://github.com/massao000/Flat-sample/blob/main/chat/02.py)
 ```py:02.py
 import flet as ft
 
@@ -229,7 +230,7 @@ def join_click(e):
 ![](../chat/sozai/0005.png)
 
 
-全体のコード
+全体のコード：[03.py](https://github.com/massao000/Flat-sample/blob/main/chat/03.py)
 ```py:03.py
 import flet as ft
 
@@ -297,6 +298,8 @@ ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 ### ユーザーインターフェース
 
 チャットアプリを豪華に見せる機能追加します。
+
+全体のコード：[main.py](https://github.com/massao000/Flat-sample/blob/main/chat/main.py)
 
 表示例
 

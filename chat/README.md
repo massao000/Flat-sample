@@ -292,11 +292,205 @@ ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 
 チャットアプリを豪華に見せる機能追加します。
 
+表示例
+
+![](../chat/sozai/0006.png)
+
+メッセージには、イニシャル入りのアイコンと、ユーザ名とメッセージを表示します。
+
+アイコンには[`CircleAvatar`](https://flet.dev/docs/controls/circleavatar/)を使います。
+
+チャットアプリは多くのメッセージを表示する必要があるため、再利用可能なカスタムコントロールを作成することが合理的です。
+`Row`を継承した`ChatMessage`クラスを新しく作ります。
+
+- `ChatMessage`クラスはインスタンス作成時に、`Message`オブジェクトからユーザ名とメッセージを取り出しそれらを表示する。
+- `get_initials`メソッドは、ユーザ名の頭文字の取得
+- `get_avatar_color`メソッドは、ユーザ名に基づきhash関数を使用して、事前に決めた色のリストからランダムに決める
+```py
+class ChatMessage(ft.Row):
+    def __init__(self, message:Message):
+        super().__init__()
+        self.vertical_alignment = "start"
+        self.controls = [
+            ft.CircleAvatar(
+                content=ft.Text(self.get_initials(message.user_name)),
+                color=ft.colors.WHITE,
+                bgcolor=self.get_avatar_color(message.user_name)
+            ),
+            ft.Column(
+                [
+                    ft.Text(message.user_name, weight="bold"),
+                    ft.Text(message.text, selectable=True)
+                ],
+                tight=True,
+                spacing=5,
+            )
+        ]
+    
+    # ユーザ名の頭文字の取得
+    def get_initials(self, uset_name: str):
+        return uset_name[:1].capitalize()
+    
+    # ユーザ名に基づき、hash関数を使用して、事前に決めた色のリストからランダムに決める
+    def get_avatar_color(self, uset_name: str):
+        colors_lookup = [
+            ft.colors.AMBER,
+            ft.colors.BLUE,
+            ft.colors.BROWN,
+            ft.colors.CYAN,
+            ft.colors.GREEN,
+            ft.colors.INDIGO,
+            ft.colors.LIME,
+            ft.colors.ORANGE,
+            ft.colors.PINK,
+            ft.colors.PURPLE,
+            ft.colors.RED,
+            ft.colors.TEAL,
+            ft.colors.YELLOW,
+        ]
+    
+        return colors_lookup[hash(uset_name) % len(colors_lookup)]
+```
 
 
+いくつかの関数や変数を変更していきます。
 
-<!-- Messageクラスのuserをuser_nameに変更、これに伴いuserを全て書き換え -->
+`Message`クラスの`user`インスタンスを`user_name`に変更します。
+```diff py
+class Message():
+-   def __init__(self, user: str, text: str, message_type: str):
++   def __init__(self, user_name: str, text: str, message_type: str):
+-       self.user = user
++       self.user_name = user_name
+        self.text = text
+        self.message_type = message_type
+```
 
+
+- `send_click`関数名を`send_message_click`名に変更します。
+- `Message`クラスを使っている引数名`user`を`user_name`に変更します。
+
+```diff py
+- def send_click(e):
++ def send_message_click(e):
+    if new_message.value != "":
+-       page.pubsub.send_all(Message(user=page.session.get('user_name'), text=new_message.value, message_type="chat_message"))
++       page.pubsub.send_all(Message(user_name=page.session.get('user_name'), text=new_message.value, message_type="chat_message"))
+        new_message.value = ''
+        new_message.focus()
+        page.update()
+```
+
+- `Message`クラスを使っている引数名`user`を`user_name`に変更します。
+- `user_name`を`join_user_name`に変更します。
+```diff py
+- user_name = ft.TextField(label="Enter your name")
++ join_user_name  = ft.TextField(label="Enter your name")
+
+def join_click(e):
+-    if not user_name.value:
+-       user_name.error_text = "Name cannot be blank!"
+-       user_name.update()
++    if not join_user_name.value:
++       join_user_name.error_text = "Name cannot be blank!"
++       join_user_name.update()
+    else:
+-       page.session.set("user_name", user_name.value)
++       page.session.set("user_name", join_user_name.value)
+        page.dialog.open = False
+-       page.pubsub.send_all(Message(user=user_name.value, text=f"{user_name.value} has joined the chat.", message_type="login_message"))
++       page.pubsub.send_all(Message(user_name=join_user_name.value, text=f"{join_user_name.value} has joined the chat.", message_type="login_message"))
+        page.update()
+    
+page.dialog = ft.AlertDialog(
+    open=True,
+    modal=True,
+    title=ft.Text("Welcome!"),
+-   content=ft.Column([user_name], tight=True),
++   content = ft.Column([join_user_name], tight=True),
+    actions=[ft.ElevatedButton(text="Join chat", on_click=join_click)],
+    actions_alignment="end"
+)
+```
+
+#### レイアウトをアップデートしていきます。
+
+`ChatMessage`クラスがユーザ名やメッセージを作成するので、`on_message`関数を書き換えていきます。
+```diff py
+def on_message(message: Message):
+    if message.message_type == "chat_message":
+-       chat.controls.append(ft.Text(f"{message.user}: {message.text}"))
++       m = ChatMessage(message)
+    elif message.message_type =="login_message":
+-       chat.controls.append(
+-           ft.Text(message.text, italic=True, color=ft.colors.BLACK45, size=12)
+-       )
++       m = ft.Text(message.text, italic=True, color=ft.colors.BLACK45, size=12)
+    chat.controls.append(m)
+    page.update()
+```
+
+新しいレイアウトにするためにいくつかの改善点があります。
+
+- メッセージを表示する[`Column`](https://flet.dev/docs/controls/Column)から[`ListView`](https://flet.dev/docs/controls/listview/)に変更
+- [`ListView`](https://flet.dev/docs/controls/listview/)の周りにボーダーを表示する[`Container`](https://flet.dev/docs/controls/container/)の追加
+- [`ElevatedButton`](https://flet.dev/docs/controls/elevatedbutton/)から[`IconButton`](https://flet.dev/docs/controls/iconbutton/)に変更
+- スペースを埋めるために`Container`に[`expand`](https://flet.dev/docs/controls/#expand)を追加
+
+変更追記したコード
+
+新しいチャットメッセージ
+```diff py
+- chat = ft.Column()
+
++ chat = ft.ListView(
++     expand = True,
++     spacing = 10,
++     auto_scroll = True
++ )
+``` 
+
+新しい入力フォーム
+```diff py
+- new_message = ft.TextField()
+
++ new_message = ft.TextField(
++     hint_text = "Write a message...",
++     autocorrect = True,
++     shift_enter = True,
++     min_lines = 1,
++     max_lines = 5,
++     filled = True,
++     expand = True,
++     on_submit = send_message_click
++ )
+```
+
+新しいページ
+```diff py
+- page.add(
+-     chat, ft.Row(controls=[new_message, ft.ElevatedButton("Send", on_click=send_click)])
+- )
+
++ page.add(
++     ft.Container(
++         content = chat,
++         border = ft.border.all(1, ft.colors.OUTLINE),
++         border_radius = 5,
++         expand = True,
++     ),
++     ft.Row(
++         [
++             new_message, 
++             ft.IconButton(
++                 icon = ft.icons.SEND_ROUNDED,
++                 tooltip = "Send message",
++                 on_click = send_message_click
++             )
++         ]
++     )
++ )
+```
 
 <!-- 動画　end_.mp4 -->
 

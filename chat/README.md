@@ -30,6 +30,8 @@ https://flet.dev/
 pip install flet
 ```
 
+<br>
+
 ### メッセージの表示
 
 ユーザのメッセージ送信とメッセージ履歴表示の基礎を作ります。
@@ -79,6 +81,8 @@ ft.app(main, view=ft.AppView.WEB_BROWSER)
 実行画面
 
 ![](../chat/sozai/0001.png)
+
+<br>
 
 ### チャットのやり取り
 
@@ -156,6 +160,7 @@ ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 >セッションIDが同じなので片方のブラウザが同期させません。
 <!-- 動画 　tabahukusei_.mp4　-->
 
+<br>
 
 ### ユーザ名設定
 前に作成したチャットアプリには基本機能ができています。
@@ -287,6 +292,7 @@ ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 
 <!-- 動画　user_neme_.mp4 -->
 
+<br>
 
 ### ユーザーインターフェース
 

@@ -7,8 +7,8 @@ Fletは、Pythonを使ってWebアプリ、デスクトップアプリ、モバ�
 https://flet.dev/
 
 ## 完成イメージ
-
 <!-- 動画  end_.mp4-->
+<div><video controls src="https://github.com/massao000/Flat-sample/assets/69783019/00f015e6-2809-46bb-b499-7c5dccd299fa" muted="false"></video></div>
 
 ## チャットの作成
 
@@ -152,14 +152,14 @@ ft.app(target=main, view=ft.AppView.WEB_BROWSER)
     1. チャット画面があるブラウザからURLをコピー
     1. 何もないブラウザにURLをペースト
 <!-- 正常な動作の動画 　session_.mp4　-->
-
+<div><video controls src="https://github.com/massao000/Flat-sample/assets/69783019/9b46958a-954e-4abd-9b44-2129943bffdd" muted="false"></video></div>
 
 >注意
 >
 >タブを複製すると複製元のブラウザのセッションIDが同じになります。
 >セッションIDが同じなので片方のブラウザが同期させません。
 <!-- 動画 　tabahukusei_.mp4　-->
-
+<div><video controls src="https://github.com/massao000/Flat-sample/assets/69783019/cfe8fb4b-ec4d-4546-97a9-c37648c1c6ae" muted="false"></video></div>
 <br>
 
 ### ユーザ名設定
@@ -291,7 +291,7 @@ ft.app(target=main, view=ft.AppView.WEB_BROWSER)
 ```
 
 <!-- 動画　user_neme_.mp4 -->
-
+<div><video controls src="https://github.com/massao000/Flat-sample/assets/69783019/99cd6b97-f222-46c7-aefd-0b6fcdde2fa4" muted="false"></video></div>
 <br>
 
 ### ユーザーインターフェース
@@ -512,3 +512,4 @@ def on_message(message: Message):
 
 ---
 <!-- 動画　end_.mp4 -->
+<div><video controls src="https://github.com/massao000/Flat-sample/assets/69783019/00f015e6-2809-46bb-b499-7c5dccd299fa" muted="false"></video></div>

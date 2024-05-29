@@ -6,6 +6,10 @@ Fletは、Pythonを使ってWebアプリ、デスクトップアプリ、モバ�
 
 https://flet.dev/
 
+## 完成イメージ
+<!-- 動画  end_.mp4-->
+<div><video controls src="https://github.com/massao000/Flat-sample/assets/69783019/a763b1a6-9226-4314-ad76-a0676d611e2a" muted="false"></video></div>
+
 ## AIチャットの作成
 
 Flatの[チャットアプリ](https://flet.dev/docs/tutorials/python-realtime-chat)のチュートリアルをベースにAIとチャットできるように改造していきます。

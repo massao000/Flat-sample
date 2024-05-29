@@ -30,12 +30,12 @@ LLMを使うために[`llama-cpp-python`](https://github.com/abetlen/llama-cpp-p
 
 https://github.com/abetlen/llama-cpp-python
 
-CPU
+CPUを使う場合
 ```
 pip install llama-cpp-python
 ```
 
-GPU
+GPUを使う場合
 ```
 pip install llama-cpp-python --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/<cudaのバージョン> --upgrade --force-reinstall --no-cache-dir
 ```
@@ -45,18 +45,21 @@ pip install llama-cpp-python --extra-index-url https://abetlen.github.io/llama-c
 - cu123: CUDA12.3
 - cu124: CUDA12.4
 
-`nvidia-smi`を使い自身の使っているcudaのバージョンを確認してください。
-
+`nvidia-smi`を使い自身の使っているcudaのバージョンを確認してください。\
 例えば`CUDA12.1`の場合のインストール方法は以下のようになります。
 ```
 pip install llama-cpp-python --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cu121 --upgrade --force-reinstall --no-cache-dir
 ```
 
-参考
+参考\
+[llama-cpp-pythonでGPUを使う方法](https://zenn.dev/saldra/articles/8785e45e1db493)
 
-https://zenn.dev/saldra/articles/8785e45e1db493
-
-https://github.com/abetlen/llama-cpp-python?tab=readme-ov-file#supported-backends
+> llama-cpp-pythonについて\
+> llama-cpp-pythonは、Llama.cppをPythonで扱えるようにしたバインディングです。
+> 
+> そのLlama.cppとは何か
+> 1. 様々なハードウェアで LLM 推論を最小限の設定で可能にする
+> 1. 幅広いハードウェアで LLM 推論を最先端のパフォーマンスで実現する
 
 
 使用するLLM
@@ -69,7 +72,7 @@ https://github.com/abetlen/llama-cpp-python?tab=readme-ov-file#supported-backend
 
 ### チャットアプリの不要なコードを削除
 
-ベースコードの`main関数`から不要なコードを削除していきます。
+ベースコードの`main関数`から不要なコードを削除していきます。\
 `Message`クラスと`ChatMessage`クラスは削除するコードはありますん。
 
 `on_message`関数のif-elif文とlogin時のテキストの削除、チャットする際の名前設定ダイアログ関連の削除、メッセージをリアルタイムに別のタブと同期する`pubsub`の削除
@@ -385,7 +388,7 @@ def ai_chat(message):
     return output["choices"][0]["message"]["content"]
 ```
 
-`main`関数の中に新しく`message_creation`関数を追加。
+`main`関数の中に新しく`message_creation`関数を追加。\
 `Message`オブジェクトを`on_message`関数に渡します。
 ```py
     def message_creation(name, text, message_type):

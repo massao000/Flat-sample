@@ -9,7 +9,9 @@ Fletは、Pythonを使ってWebアプリ、デスクトップアプリ、モバ�
 ## 完成イメージ
 GPUを使っています。
 <!-- 動画  out.mp4-->
-<div><video controls src="https://github.com/massao000/Flat-sample/assets/69783019/a763b1a6-9226-4314-ad76-a0676d611e2a" muted="false"></video></div>
+https://github.com/massao000/Flat-sample/assets/69783019/a763b1a6-9226-4314-ad76-a0676d611e2a
+
+<!-- <div><video controls src="https://github.com/massao000/Flat-sample/assets/69783019/a763b1a6-9226-4314-ad76-a0676d611e2a" muted="false"></video></div> -->
 
 ## AIチャットの作成
 

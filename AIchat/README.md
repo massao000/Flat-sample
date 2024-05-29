@@ -4,7 +4,7 @@
 
 Fletは、Pythonを使ってWebアプリ、デスクトップアプリ、モバイルアプリを簡単に開発できるフレームワークです。
 
-https://flet.dev/
+[fletサイト](https://flet.dev/)
 
 ## 完成イメージ
 <!-- 動画  end_.mp4-->
@@ -14,7 +14,7 @@ https://flet.dev/
 
 Flatの[チャットアプリ](https://flet.dev/docs/tutorials/python-realtime-chat)のチュートリアルをベースにAIとチャットできるように改造していきます。
 
-チャットアプリの[チュートリアルの解説](https://zenn.dev/shiro_toy_box/articles/0f2833f392b036)
+<!-- チャットアプリの[チュートリアルの解説](https://zenn.dev/shiro_toy_box/articles/0f2833f392b036) -->
 
 - [ベースになるコード](../chat/main.py)
 - [チャットアプリのドキュメント](../chat/README.md)
@@ -30,9 +30,8 @@ Flatの[チャットアプリ](https://flet.dev/docs/tutorials/python-realtime-c
 pip install flet
 ```
 
-LLMを使うために[`llama-cpp-python`](https://github.com/abetlen/llama-cpp-python)パッケージをインストール
-
-https://github.com/abetlen/llama-cpp-python
+LLMを使うために`llama-cpp-python`パッケージをインストール\
+[llama-cpp-python](https://github.com/abetlen/llama-cpp-python)
 
 CPUを使う場合
 ```

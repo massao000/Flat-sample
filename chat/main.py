@@ -26,10 +26,10 @@ class ChatMessage(ft.Row):
             )
         ]
     
-    def get_initials(self, uset_name: str):
-        return uset_name[:1].capitalize()
+    def get_initials(self, user_name: str):
+        return user_name[:1].capitalize()
     
-    def get_avatar_color(self, uset_name: str):
+    def get_avatar_color(self, user_name: str):
         colors_lookup = [
             ft.colors.AMBER,
             ft.colors.BLUE,
@@ -46,7 +46,7 @@ class ChatMessage(ft.Row):
             ft.colors.YELLOW,
         ]
     
-        return colors_lookup[hash(uset_name) % len(colors_lookup)]
+        return colors_lookup[hash(user_name) % len(colors_lookup)]
         
 
 def main(page: ft.Page):
@@ -124,6 +124,7 @@ def main(page: ft.Page):
             content = chat,
             border = ft.border.all(1, ft.colors.OUTLINE),
             border_radius = 5,
+            padding = 10,
             expand = True,
         ),
         ft.Row(

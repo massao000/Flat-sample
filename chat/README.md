@@ -99,7 +99,7 @@ page.pubsub.subscribe(on_message)
 ```
 
 2. メッセージ受信処理
-    - 遅れれてきたメッセージを、チェット履歴に登録します。
+    - 送られてきたメッセージを、チェット履歴に登録します。
 ```py
 def on_message(message: Message):
     # 送られてきたメッセージをchatに追加

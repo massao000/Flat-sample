@@ -21,6 +21,7 @@ class ChatMessage(ft.Row):
                 [
                     ft.Text(message.user_name, weight="bold"),
                     # ft.Text(message.text, selectable=True)
+                    # 囲い付きチャット
                     ft.Container(
                         content = ft.Text(message.text, selectable=True),
                         bgcolor = self.get_bgcolor(message.message_type), #背景色

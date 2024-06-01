@@ -150,6 +150,7 @@ def main(page: ft.Page):
             content = chat,
             border = ft.border.all(1, ft.colors.OUTLINE),
             border_radius = 5,
+            padding = 10,
             expand = True,
         ),
         ft.Row(
@@ -260,6 +261,7 @@ def main(page: ft.Page):
             content = chat,
             border = ft.border.all(1, ft.colors.OUTLINE),
             border_radius = 5,
+            padding = 10,
             expand = True,
         ),
         ft.Row(
@@ -355,6 +357,7 @@ def main(page: ft.Page):
             content = chat,
             border = ft.border.all(1, ft.colors.OUTLINE),
             border_radius = 5,
+            padding = 10,
             expand = True,
         ),
         ft.Row(
@@ -539,6 +542,7 @@ def main(page: ft.Page):
             content = chat,
             border = ft.border.all(1, ft.colors.OUTLINE),
             border_radius = 5,
+            padding = 10,
             expand = True,
         ),
         ft.Row(
@@ -628,7 +632,7 @@ AIのチャットの返答待ちの時だけ表示したいのでプログレス
 
 ありとなしの実際の画像
 <!-- どのように変わるか比較の画像を入れる -->
-![](../AIchat/sozai/0001.png)
+<!-- ![](../AIchat/sozai/0001.png) -->
 
 ```diff　py
     def send_message_click(e):
@@ -658,7 +662,7 @@ AIのチャットの返答待ちの時だけ表示したいのでプログレス
             content = chat,
             border = ft.border.all(1, ft.colors.OUTLINE),
             border_radius = 5,
-+            padding = 10,
+            padding = 10,
             expand = True,
         ),
 +        progress,

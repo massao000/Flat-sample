@@ -496,6 +496,7 @@ def on_message(message: Message):
 +         content = chat,
 +         border = ft.border.all(1, ft.colors.OUTLINE),
 +         border_radius = 5,
++         padding = 10,
 +         expand = True,
 +     ),
 +     ft.Row(
